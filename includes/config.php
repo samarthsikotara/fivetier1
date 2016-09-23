@@ -7,11 +7,11 @@
 	define('APP_PATH', 'http://tranquil-castle-25130.herokuapp.com/');
 	
 	/*  MySQL database connection credentials (please place values between the apostrophes) */
-	$dbHost = "http://us-cdbr-iron-east-04.cleardb.net/"; //MySQL Hostname
-	$dbUser = "b593d7c2f3ba91"; //MySQL Username
-	$dbPass = "a0260ecd"; //MySQL Password
-	$dbName = "heroku_110cb812c93efbb"; //MySQL Database Name
-	
+	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+	$dbHost =  $url["host"]; //MySQL Hostname
+        $dbUser = $url["user"]; //MySQL Username
+        $dbPass = $url["pass"]; //MySQL Password
+        $dbName = substr($url["path"], 1); //MySQL Database Name
 	
 	//----------------------------------------------------------------------------------//	
 	//								  OPTIONAL SETTINGS
