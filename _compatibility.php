@@ -1,5 +1,5 @@
 <?php 	
-	ini_set('display_errors', 0);
+	ini_set('display_errors', 1);
 	define(PHP_VER, '5.2');
 	define(TOTAL_SCORE, '9');
 	$result = array();
