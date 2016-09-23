@@ -4,13 +4,13 @@
 	//----------------------------------------------------------------------------------//
 	
 	/*  Set the URL to your Sendy installation (without the trailing slash) */
-	define('APP_PATH', 'http://your_sendy_installation_url');
+	define('APP_PATH', 'http://tranquil-castle-25130.herokuapp.com/');
 	
 	/*  MySQL database connection credentials (please place values between the apostrophes) */
-	$dbHost = ''; //MySQL Hostname
-	$dbUser = ''; //MySQL Username
-	$dbPass = ''; //MySQL Password
-	$dbName = ''; //MySQL Database Name
+	$dbHost = 'http://us-cdbr-iron-east-04.cleardb.net/; //MySQL Hostname
+	$dbUser = 'b593d7c2f3ba91'; //MySQL Username
+	$dbPass = 'a0260ecd'; //MySQL Password
+	$dbName = 'heroku_110cb812c93efbb'; //MySQL Database Name
 	
 	
 	//----------------------------------------------------------------------------------//	
