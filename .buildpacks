@@ -1,2 +1,3 @@
 https://github.com/danielepolencic/heroku-buildpack-php.git
 https://github.com/piotras/heroku-buildpack-gettext
+sudo chmod 777 /uploads
