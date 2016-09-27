@@ -22,3 +22,12 @@ RewriteRule ^unsubscribe/(.*)$ unsubscribe.php?i=$1 [L]
 
 # subscribe
 RewriteRule ^subscribe/(.*)$ subscribe.php?i=$1 [L]
+
+<IfModule mod_security.c>
+  SecRuleEngine Off
+  SecFilterInheritance Off
+  SecFilterEngine Off
+  SecFilterScanPOST Off
+  SecRuleRemoveById 300015 3000016 3000017
+</IfModule>
+
