@@ -775,36 +775,36 @@
 					}
 					
 					//send email to sender
-					$mail2 = new PHPMailer();	
-					if($s3_key!='' && $s3_secret!='')
-					{
-						$mail2->IsAmazonSES();
-						$mail2->AddAmazonSESKey($s3_key, $s3_secret);
-					}
-					else if($smtp_host!='' && $smtp_port!='' && $smtp_ssl!='' && $smtp_username!='' && $smtp_password!='')
-					{
-						$mail2->IsSMTP();
-						$mail2->SMTPDebug = 0;
-						$mail2->SMTPAuth = true;
-						$mail2->SMTPSecure = $smtp_ssl;
-						$mail2->Host = $smtp_host;
-						$mail2->Port = $smtp_port; 
-						$mail2->Username = $smtp_username;  
-						$mail2->Password = $smtp_password;
-					}
-					$mail2->Timezone   = $user_timezone;
-					$mail2->CharSet	  =	"UTF-8";
-					$mail2->From       = $from_email;
-					$mail2->FromName   = $from_name;
-					$mail2->Subject = $title_to_me;
-					$mail2->AltBody = $message_to_me_plain;
-					$mail2->MsgHTML($message_to_me_html);
-					$mail2->AddAddress($from_email, $from_name); //send email to brand account owner
-					$mail2->AddBCC($user_email, $user_name); //send email to main account owner
-					$mail2->Send();
+					// $mail2 = new PHPMailer();	
+					// if($s3_key!='' && $s3_secret!='')
+					// {
+					// 	$mail2->IsAmazonSES();
+					// 	$mail2->AddAmazonSESKey($s3_key, $s3_secret);
+					// }
+					// else if($smtp_host!='' && $smtp_port!='' && $smtp_ssl!='' && $smtp_username!='' && $smtp_password!='')
+					// {
+					// 	$mail2->IsSMTP();
+					// 	$mail2->SMTPDebug = 0;
+					// 	$mail2->SMTPAuth = true;
+					// 	$mail2->SMTPSecure = $smtp_ssl;
+					// 	$mail2->Host = $smtp_host;
+					// 	$mail2->Port = $smtp_port; 
+					// 	$mail2->Username = $smtp_username;  
+					// 	$mail2->Password = $smtp_password;
+					// }
+					// $mail2->Timezone   = $user_timezone;
+					// $mail2->CharSet	  =	"UTF-8";
+					// $mail2->From       = $from_email;
+					// $mail2->FromName   = $from_name;
+					// $mail2->Subject = $title_to_me;
+					// $mail2->AltBody = $message_to_me_plain;
+					// $mail2->MsgHTML($message_to_me_html);
+					// $mail2->AddAddress($from_email, $from_name); //send email to brand account owner
+					// $mail2->AddBCC($user_email, $user_name); //send email to main account owner
+					// $mail2->Send();
 					
 					//Zapier Trigger 'new_user_subscribed' event
-					zapier_trigger_new_campaign_sent($title_treated, $from_name, $from_email, $reply_to, strftime("%a, %b %d, %Y, %I:%M%p", $sent), APP_PATH.'/w/'.short($campaign_id), $app);
+					//zapier_trigger_new_campaign_sent($title_treated, $from_name, $from_email, $reply_to, strftime("%a, %b %d, %Y, %I:%M%p", $sent), APP_PATH.'/w/'.short($campaign_id), $app);
 					
 					//quit
 					exit;
