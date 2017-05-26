@@ -156,7 +156,7 @@ for($i=0;$i<count($test_email_array);$i++)
 	$mail->FromName   = $from_name;
 	$mail->Subject = $title2;
 	$mail->AltBody = $plain_text2;
-	$mail->MsgHTML($html_text2);
+	$mail->Body = $html_text2;
 	$mail->AddAddress($test_email_array[$i], '');
 	$mail->IsHTML(true);
 	$mail->AddEmbeddedImage("image002.jpg", "my-attach", "image002.jpg");
