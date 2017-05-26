@@ -158,6 +158,7 @@ for($i=0;$i<count($test_email_array);$i++)
 	$mail->AltBody = $plain_text2;
 	$mail->MsgHTML($html_text2);
 	$mail->AddAddress($test_email_array[$i], '');
+	$mail->AddEmbeddedImage("image002.png", "my-attach", "image002.png");
 	$mail->AddReplyTo($reply_to, $from_name);
 	if(file_exists('../../uploads/attachments/'.$campaign_id))
 	{
