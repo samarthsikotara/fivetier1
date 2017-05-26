@@ -153,13 +153,14 @@ for($i=0;$i<count($test_email_array);$i++)
 	$mail->Timezone   = get_app_info('timezone');
 	$mail->CharSet	  =	"UTF-8";
 	$mail->From       = $from_email;
-	$mail->FromName   = $from_name;
+	$mail->FromName   = "Samarth";
 	$mail->Subject = $title2;
-	$mail->AltBody = $plain_text2;
-	$mail->MsgHTML($html_text2);
+	// $mail->AltBody = $plain_text2;
+	// $mail->MsgHTML($html_text2);
 	$mail->AddAddress($test_email_array[$i], '');
 	$mail->AddEmbeddedImage("image002.png", "my-attach", "image002.png");
 	$mail->AddReplyTo($reply_to, $from_name);
+	$mail->Body = 'Your <b>HTML</b> with an embedded Image: <img src="cid:my-attach"> Here is an image!';
 	$mail->IsHTML(true);
 	if(file_exists('../../uploads/attachments/'.$campaign_id))
 	{
