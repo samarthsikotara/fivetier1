@@ -160,7 +160,7 @@ for($i=0;$i<count($test_email_array);$i++)
 	$mail->AddAddress($test_email_array[$i], '');
 	$mail->AddEmbeddedImage("image002.png", "my-attach", "image002.png");
 	$mail->AddReplyTo($reply_to, $from_name);
-	$mail->Body = 'Your <b>HTML</b> with an embedded Image: <img src="cid:my-attach"> Here is an image!';
+	$mail->Body = 'Your <b>HTML</b> with an embedded Image: <img src=\"cid:my-attach\"> Here is an image!';
 	$mail->IsHTML(true);
 	if(file_exists('../../uploads/attachments/'.$campaign_id))
 	{
