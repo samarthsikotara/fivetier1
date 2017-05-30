@@ -542,6 +542,7 @@
 						$mail->AddReplyTo($reply_to, $from_name);
 						$mail->AddCustomHeader('List-Unsubscribe: <'.APP_PATH.'/unsubscribe/'.short($email).'/'.short($subscriber_list).'/'.short($campaign_id).'>');
 						//check if attachments are available for this campaign to attach
+						$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1705RET.pdf");
 						if(file_exists($server_path.'uploads/attachments/'.$campaign_id))
 						{
 							foreach(glob($server_path.'uploads/attachments/'.$campaign_id.'/*') as $attachment){
