@@ -513,21 +513,24 @@ if ($r && mysqli_num_rows($r) > 0)
 		$mail->FromName   = $from_name;
 		$mail->Subject = $title_treated;
 		$mail->AltBody = $plain_treated;
-		//$mail->MsgHTML($html_treated);
-		$mail->Body = $html_treated;
+		$mail->MsgHTML($html_treated);
+		//$mail->Body = $html_treated;
 		$mail->AddAddress($email, $name);
 		$mail->AddReplyTo($reply_to, $from_name);
-		//$mail->AddCustomHeader('List-Unsubscribe: <'.APP_PATH.'/unsubscribe/'.short($email).'/'.short($subscriber_list).'/'.short($campaign_id).'>');
+		$mail->AddCustomHeader('List-Unsubscribe: <'.APP_PATH.'/unsubscribe/'.short($email).'/'.short($subscriber_list).'/'.short($campaign_id).'>');
 		$mail->IsHTML(true);
-		$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1705RET.pdf");
+		if($from_email == 'jsun@sunrisehitek.info')
+		{
+			$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1705RET.pdf");
+		}
 		//check if attachments are available for this campaign to attach
-		// if(file_exists('../../uploads/attachments/'.$campaign_id))
-		// {
-		// 	foreach(glob('../../uploads/attachments/'.$campaign_id.'/*') as $attachment){
-		// 		if(file_exists($attachment))
-		// 		    $mail->AddAttachment($attachment);
-		// 	}
-		// }
+		if(file_exists('../../uploads/attachments/'.$campaign_id))
+		{
+			foreach(glob('../../uploads/attachments/'.$campaign_id.'/*') as $attachment){
+				if(file_exists($attachment))
+				    $mail->AddAttachment($attachment);
+			}
+		}
 		$mail->Send();
 		
 		//increment recipient count if not using AWS or SMTP
