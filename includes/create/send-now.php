@@ -513,10 +513,11 @@ if ($r && mysqli_num_rows($r) > 0)
 		$mail->FromName   = $from_name;
 		$mail->Subject = $title_treated;
 		$mail->AltBody = $plain_treated;
-		$mail->MsgHTML($html_treated);
+		//$mail->MsgHTML($html_treated);
+		$mail->Body = $html_treated;
 		$mail->AddAddress($email, $name);
 		$mail->AddReplyTo($reply_to, $from_name);
-		$mail->AddCustomHeader('List-Unsubscribe: <'.APP_PATH.'/unsubscribe/'.short($email).'/'.short($subscriber_list).'/'.short($campaign_id).'>');
+		//$mail->AddCustomHeader('List-Unsubscribe: <'.APP_PATH.'/unsubscribe/'.short($email).'/'.short($subscriber_list).'/'.short($campaign_id).'>');
 		$mail->IsHTML(true);
 		$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1705RET.pdf");
 		//check if attachments are available for this campaign to attach
