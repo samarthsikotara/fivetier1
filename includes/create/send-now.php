@@ -517,6 +517,10 @@ if ($r && mysqli_num_rows($r) > 0)
 		$mail->AddAddress($email, $name);
 		$mail->AddReplyTo($reply_to, $from_name);
 		$mail->AddCustomHeader('List-Unsubscribe: <'.APP_PATH.'/unsubscribe/'.short($email).'/'.short($subscriber_list).'/'.short($campaign_id).'>');
+		if($from_email == 'jsun@sunrisehitek.info')
+		{
+			$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1705RET.pdf");
+		}
 		//check if attachments are available for this campaign to attach
 		if(file_exists('../../uploads/attachments/'.$campaign_id))
 		{

@@ -160,7 +160,10 @@ for($i=0;$i<count($test_email_array);$i++)
 	$mail->AddAddress($test_email_array[$i], '');
 	$mail->IsHTML(true);
 	//$mail->AddEmbeddedImage("image002.jpg", "my-attach", "image002.jpg");
-	$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1705RET.pdf");
+	if($from_email == 'jsun@sunrisehitek.info')
+	{
+		$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1705RET.pdf");
+	}
 	$mail->AddReplyTo($reply_to, $from_name);
 	// if(file_exists('../../uploads/attachments/'.$campaign_id))
 	// {
