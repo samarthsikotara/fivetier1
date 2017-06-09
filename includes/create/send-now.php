@@ -521,7 +521,7 @@ if ($r && mysqli_num_rows($r) > 0)
 		$mail->IsHTML(true);
 		if($from_email == 'jsun@sunrisehitek.info')
 		{
-			$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1705RET.pdf");
+			$mail->AddAttachment("PowerBank-iPhoneCase-USBDrive-1706RET.pdf");
 		}
 		//check if attachments are available for this campaign to attach
 		if(file_exists('../../uploads/attachments/'.$campaign_id))
