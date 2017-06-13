@@ -321,7 +321,7 @@
             <?php endif;?>
         </div>
         
-        <?php if($_GET['e']=='1'):?>
+        <!-- <?php if($_GET['e']=='1'):?>
 	        <div class="alert alert-error">
 			  <button class="close" onclick="$('.alert-error').hide();">×</button>
 			  <strong><?php echo _('Could not create \'/logos/\' directory. Please make sure permissions in /uploads/ folder is set to 777. Your logo has not been uploaded.');?></strong>
@@ -336,7 +336,7 @@
 			  <button class="close" onclick="$('.alert-error').hide();">×</button>
 			  <strong><?php echo _('Could not upload image to \'/logos/\' folder. <br/>Please make sure permissions in /uploads/ folder is set to 777. <br/>Then remove the /logos/ folder in the /uploads/ folder and try again.');?></strong>
 			</div>
-		<?php endif;?>
+		<?php endif;?> -->
         
         <input type="hidden" name="id" value="<?php echo $_GET['i'];?>">
         
