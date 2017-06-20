@@ -162,7 +162,8 @@ for($i=0;$i<count($test_email_array);$i++)
 	//$mail->AddEmbeddedImage("image002.jpg", "my-attach", "image002.jpg");
 	if($from_email == 'jsun@sunrisehitek.info')
 	{
-		$mail->AddAttachment("Chromebook-iPadG6-MFiKeyboard.pdf");
+		//$mail->AddAttachment("Chromebook-iPadG6-MFiKeyboard.pdf");
+		$mail ->AddAttachment("PowerBank-iPhoneCase-USBDrive-1706RET.pdf");
 	}
 	$mail->AddReplyTo($reply_to, $from_name);
 	// if(file_exists('../../uploads/attachments/'.$campaign_id))
