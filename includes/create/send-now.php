@@ -519,7 +519,7 @@ if ($r && mysqli_num_rows($r) > 0)
 		$mail->AddReplyTo($reply_to, $from_name);
 		$mail->AddCustomHeader('List-Unsubscribe: <'.APP_PATH.'/unsubscribe/'.short($email).'/'.short($subscriber_list).'/'.short($campaign_id).'>');
 		$mail->IsHTML(true);
-		if($from_email == 'jsun@sunrisehitek.info')
+		if($from_email == 'jsun@goigear.com')
 		{
 			//$mail->AddAttachment("Chromebook-iPadG6-MFiKeyboard.pdf");
 			$mail ->AddAttachment("PowerBank-iPhoneCase-USBDrive-1706RET.pdf");

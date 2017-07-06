@@ -160,7 +160,7 @@ for($i=0;$i<count($test_email_array);$i++)
 	$mail->AddAddress($test_email_array[$i], '');
 	$mail->IsHTML(true);
 	//$mail->AddEmbeddedImage("image002.jpg", "my-attach", "image002.jpg");
-	if($from_email == 'jsun@sunrisehitek.info')
+	if($from_email == 'jsun@goigear.com')
 	{
 		//$mail->AddAttachment("Chromebook-iPadG6-MFiKeyboard.pdf");
 		$mail ->AddAttachment("PowerBank-iPhoneCase-USBDrive-1706RET.pdf");
