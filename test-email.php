@@ -1,11 +1,22 @@
 <?php
 
-  $email = $_GET['email'] ;
-  $message = $_GET['message'] ;
-
-  // here we use the php mail function
-  // to send an email to:
-  // you@example.com
-  mail( "samarthsikotara@gmail.com", "Feedback Form Results",$message, "From: $email" );
+  $to = "samarthsikotara@gmail.com";
+	$subject = "This is subject";
+	 
+	$message = "<b>This is HTML message.</b>";
+	$message .= "<h1>This is headline.</h1>";
+	 
+	$header = "From:samarthsikotara@gmail.com \r\n";
+	$header .= "Cc:sikotara@alleyoop.in \r\n";
+	$header .= "MIME-Version: 1.0\r\n";
+	$header .= "Content-type: text/html\r\n";
+	 
+	$retval = mail ($to,$subject,$message,$header);
+	 
+	if( $retval == true ) {
+	  echo "Message sent successfully...";
+	}else {
+	  echo "Message could not be sent...";
+	}
 ?>
 
