@@ -77,7 +77,7 @@
 		      <th><?php echo _('Sent');?></th>
 		      <th><?php echo _('Unique Opens');?></th>
 		      <th><?php echo _('Unique Clicks');?></th>
-		      <th><?php echo _('Duplicate');?></th>
+		      <!-- <th><?php echo _('Duplicate');?></th> -->
 		      <th><?php echo _('Delete');?></th>
 		    </tr>
 		  </thead>
