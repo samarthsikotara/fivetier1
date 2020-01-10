@@ -60,8 +60,10 @@
 	              <span class="caret"></span>
 	            </a>
 	            <ul class="dropdown-menu">
-	              <li><a href="<?php echo get_app_info('path');?>/settings<?php if(get_app_info('is_sub_user')) echo '?i='.get_app_info('app');?>"><i class="icon icon-cog"></i> <?php echo _('Settings');?></a></li>
-	              <li class="divider"></li>
+	            	<?php if(get_app_info('userID') == 1):?>
+	              	<li><a href="<?php echo get_app_info('path');?>/settings<?php if(get_app_info('is_sub_user')) echo '?i='.get_app_info('app');?>"><i class="icon icon-cog"></i> <?php echo _('Settings');?></a></li>
+	              	<li class="divider"></li>
+	              <?php endif;?>
 	              <li><a href="<?php echo get_app_info('path');?>/logout"><i class="icon icon-off"></i> <?php echo _('Logout');?></a></li>
 	            </ul>
 	          </div>
