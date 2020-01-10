@@ -36,7 +36,7 @@
     	<h2><?php echo _('All campaigns');?></h2><br/>
     	<div style="clear:both;">
     		<!-- <a href="<?php echo get_app_info('path');?>/create?i=<?php echo get_app_info('app');?>" class="btn"><i class="icon-plus-sign"></i> <?php echo _('Create & send new campaign');?></a> -->
-    		<a href="#rss-modal" class="btn campaigns-rss-btn" style="float:right" title="<?php echo _('Campaigns RSS feed');?>" data-toggle="modal"><i class="icon icon-rss"></i></a>
+    		<!-- <a href="#rss-modal" class="btn campaigns-rss-btn" style="float:right" title="<?php echo _('Campaigns RSS feed');?>" data-toggle="modal"><i class="icon icon-rss"></i></a> -->
     		<div id="rss-modal" class="modal hide fade">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
