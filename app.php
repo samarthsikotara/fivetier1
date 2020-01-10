@@ -246,7 +246,7 @@
 										      <td><span class="label">'.$percentage_clicked.'%</span> '.number_format(get_click_percentage($id)).' '._('clicked').'</td>
 										      <td>';
 									    
-									    if(get_app_info('is_sub_user'))
+									    if(get_app_info('is_sub_user') && (get_app_info('userID') == 1))
 										{
 										    echo '
 										    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
@@ -261,7 +261,7 @@
 										    </form>
 										    ';
 										}
-										else if (get_app_info('userID') == 1){
+										else
 										    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 								      
 								        echo '</td>
@@ -365,7 +365,7 @@
 									      <td>
 									';
 									 
-									if(get_app_info('is_sub_user'))
+									if(get_app_info('is_sub_user') && (get_app_info('userID') == 1))
 									{
 									    echo '
 									    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
@@ -380,7 +380,7 @@
 									    </form>
 									    ';
 									}
-									else if (get_app_info('userID') == 1){
+									else
 									    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 									      
 										 echo '</td>
@@ -467,7 +467,7 @@
 								      <td>-</td>
 								      <td>';
 								      
-								if(get_app_info('is_sub_user'))
+								if(get_app_info('is_sub_user') && (get_app_info('userID') == 1))
 								{
 								    echo '
 								    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
@@ -482,7 +482,7 @@
 								    </form>
 								    ';
 								}
-								else if (get_app_info('userID') == 1){
+								else
 								    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 								 
 								 echo ' </td>
@@ -528,7 +528,7 @@
 							      <td><span class="label">'.$percentage_clicked.'%</span> '.number_format(get_click_percentage($id)).' '._('clicked').'</td>
 							      <td>';
 							      
-							if(get_app_info('is_sub_user'))
+							if(get_app_info('is_sub_user') && (get_app_info('userID') == 1))
 							{
 							    echo '
 							    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
@@ -543,7 +543,7 @@
 							    </form>
 							    ';
 							}
-							else if (get_app_info('userID') == 1){
+							else
 							    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 						      
 						      echo '</td>
