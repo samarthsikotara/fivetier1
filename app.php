@@ -80,10 +80,8 @@
 		      <th>
 		      	<?php 
 		      	 if(get_app_info('userID') == 1){
-		      	 	echo _('Duplicate')
-		      	 }else{
-		      	 	''
-		      	 };
+		      	 	echo _('Duplicate');
+		      	 }
 		      	?>
 		      </th>
 		      <th><?php echo _('Delete');?></th>
