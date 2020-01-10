@@ -55,7 +55,7 @@
 		  <input type="password" class="input" placeholder="<?php echo _('Password');?>" name="password"><br/><br/>
 		  <input type="hidden" name="redirect" value="<?php echo htmlentities($redirect, ENT_QUOTES);?>"/>
 		  <button type="submit" class="btn"><i class="icon icon-signin"></i> <?php echo _('Sign in');?></button><br/><br/>
-		  <p><a href="#forgot-form" title="" data-toggle="modal" class="recovery" id="forgot-btn"><?php echo _('Forgot password?');?></a></p>
+		  <!-- <p><a href="#forgot-form" title="" data-toggle="modal" class="recovery" id="forgot-btn"><?php echo _('Forgot password?');?></a></p> -->
 		</form>
     </div>   
     
