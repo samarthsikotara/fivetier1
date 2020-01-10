@@ -247,111 +247,111 @@
 										      <td><span class="label">'.$percentage_clicked.'%</span> '.number_format(get_click_percentage($id)).' '._('clicked').'</td>
 										      <td>';
 									    
-									    if(get_app_info('is_sub_user'))
-										{
-										    echo '
-										    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
-										    <input type="hidden" name="campaign_id" value="'.$id.'"/>
-										    <input type="hidden" name="on-brand" value="'.get_app_info('app').'"/>
-										    <a href="javascript:void(0)" id="duplicate-btn-direct-'.$id.'"><i class="icon icon-copy"></i></a>
-										    <script type="text/javascript">
-										    $("#duplicate-btn-direct-'.$id.'").click(function(){
-										    	$("#duplicate-form-direct-'.$id.'").submit();
-										    });
-										    </script>
-										    </form>
-										    ';
-										}
-										else
-										    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
+									 //    if(get_app_info('is_sub_user'))
+										// {
+										//     echo '
+										//     <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
+										//     <input type="hidden" name="campaign_id" value="'.$id.'"/>
+										//     <input type="hidden" name="on-brand" value="'.get_app_info('app').'"/>
+										//     <a href="javascript:void(0)" id="duplicate-btn-direct-'.$id.'"><i class="icon icon-copy"></i></a>
+										//     <script type="text/javascript">
+										//     $("#duplicate-btn-direct-'.$id.'").click(function(){
+										//     	$("#duplicate-form-direct-'.$id.'").submit();
+										//     });
+										//     </script>
+										//     </form>
+										//     ';
+										// }
+										// else
+										//     echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 								      
-								        echo '</td>
-										      <td><a href="javascript:void(0)" title="'._('Delete').' '.$campaign_title.'?" id="delete-btn-'.$id.'" class="delete-campaign"><i class="icon icon-trash"></i></a></td>
-										      <script type="text/javascript">
-										    	$("#delete-btn-'.$id.'").click(function(e){
-												e.preventDefault(); 
-												c = confirm(\''._('Confirm delete').' '.addslashes($title).'?\');
-												if(c)
-												{
-													$.post("includes/campaigns/delete.php", { campaign_id: '.$id.' },
-													  function(data) {
-													      if(data)
-													      {
-													      	$("#'.$id.'").fadeOut();
-													      }
-													      else
-													      {
-													      	alert("'._('Sorry, unable to delete. Please try again later!').'");
-													      }
-													  }
-													);
-												}
-												});
+								  //       echo '</td>
+										//       <td><a href="javascript:void(0)" title="'._('Delete').' '.$campaign_title.'?" id="delete-btn-'.$id.'" class="delete-campaign"><i class="icon icon-trash"></i></a></td>
+										//       <script type="text/javascript">
+										//     	$("#delete-btn-'.$id.'").click(function(e){
+										// 		e.preventDefault(); 
+										// 		c = confirm(\''._('Confirm delete').' '.addslashes($title).'?\');
+										// 		if(c)
+										// 		{
+										// 			$.post("includes/campaigns/delete.php", { campaign_id: '.$id.' },
+										// 			  function(data) {
+										// 			      if(data)
+										// 			      {
+										// 			      	$("#'.$id.'").fadeOut();
+										// 			      }
+										// 			      else
+										// 			      {
+										// 			      	alert("'._('Sorry, unable to delete. Please try again later!').'");
+										// 			      }
+										// 			  }
+										// 			);
+										// 		}
+										// 		});
 												
-												$("#continue-sending-btn-'.$id.'").click(function(e){
-													e.preventDefault();
-													c = confirm("'._('Only continue if you think that sending has stopped. Resume sending?').'");
-													if(c)
-													{
-														url = $(this).data("url");
-														campaign_id = $(this).data("id");
-														email_list = $(this).data("email_list");
-														app = $(this).data("app");
-														offset = $(this).data("offset");
+										// 		$("#continue-sending-btn-'.$id.'").click(function(e){
+										// 			e.preventDefault();
+										// 			c = confirm("'._('Only continue if you think that sending has stopped. Resume sending?').'");
+										// 			if(c)
+										// 			{
+										// 				url = $(this).data("url");
+										// 				campaign_id = $(this).data("id");
+										// 				email_list = $(this).data("email_list");
+										// 				app = $(this).data("app");
+										// 				offset = $(this).data("offset");
 														
-														$(this).tooltip("hide");
-														$("#continue-sending-text").html("'._('Ok').'");
+										// 				$(this).tooltip("hide");
+										// 				$("#continue-sending-text").html("'._('Ok').'");
 														
-														$.post(url, { campaign_id: campaign_id, email_list: email_list, app: app, offset: offset },
-														  function(data) {													  	  
-														      if(data)
-														      {
-														      	//
-														      }
-														  }
-														);
-													}
-												});
+										// 				$.post(url, { campaign_id: campaign_id, email_list: email_list, app: app, offset: offset },
+										// 				  function(data) {													  	  
+										// 				      if(data)
+										// 				      {
+										// 				      	//
+										// 				      }
+										// 				  }
+										// 				);
+										// 			}
+										// 		});
 												
-												$(document).ready(function() {
+										// 		$(document).ready(function() {
 								    			
-								    				refresh_interval = setInterval(function(){get_sent_count('.$id.')}, 2000);
+								  //   				refresh_interval = setInterval(function(){get_sent_count('.$id.')}, 2000);
 									    			
-									    			function get_sent_count(cid)
-									    			{
-									    				clearInterval(refresh_interval);
+									 //    			function get_sent_count(cid)
+									 //    			{
+									 //    				clearInterval(refresh_interval);
 									    				
-										    			$.post("includes/app/progress.php", { campaign_id: cid },
-														  function(data) {
-														      if(data)
-														      {
-														      	if(data.indexOf("%)") == -1)
-														      	{													      		
-														      		$("#label'.$id.' span.label").text("'._('Sent').'");
-															    	$("#label'.$id.' span.label").removeClass("label-warning");
-															    	$("#label'.$id.' span.label").addClass("label-success");
-															    	$("#label'.$id.' a").tooltip("hide").attr("data-original-title", "'._('View report for this campaign').'").tooltip("fixTitle");
-																    $("#sent-status'.$id.'").text("'.parse_date($sent, 'long', true).'");
-																    $("#separator'.$id.'").hide();
-																    $("#continue-sending-btn-'.$id.'").hide();
-														      	}
-														      	else refresh_interval = setInterval(function(){get_sent_count('.$id.')}, 2000);
+										//     			$.post("includes/app/progress.php", { campaign_id: cid },
+										// 				  function(data) {
+										// 				      if(data)
+										// 				      {
+										// 				      	if(data.indexOf("%)") == -1)
+										// 				      	{													      		
+										// 				      		$("#label'.$id.' span.label").text("'._('Sent').'");
+										// 					    	$("#label'.$id.' span.label").removeClass("label-warning");
+										// 					    	$("#label'.$id.' span.label").addClass("label-success");
+										// 					    	$("#label'.$id.' a").tooltip("hide").attr("data-original-title", "'._('View report for this campaign').'").tooltip("fixTitle");
+										// 						    $("#sent-status'.$id.'").text("'.parse_date($sent, 'long', true).'");
+										// 						    $("#separator'.$id.'").hide();
+										// 						    $("#continue-sending-btn-'.$id.'").hide();
+										// 				      	}
+										// 				      	else refresh_interval = setInterval(function(){get_sent_count('.$id.')}, 2000);
 														      		
-														      	$("#progress'.$id.'").html(data);
-														      }
-														      else
-														      {
-														      	$("#progress'.$id.'").html("'._('Error retrieving count').'");
-														      }
-														  }
-														);
-													}
+										// 				      	$("#progress'.$id.'").html(data);
+										// 				      }
+										// 				      else
+										// 				      {
+										// 				      	$("#progress'.$id.'").html("'._('Error retrieving count').'");
+										// 				      }
+										// 				  }
+										// 				);
+										// 			}
 													
-									    		});
-												</script>
-										    </tr>
-					  					';
-					  				}
+									 //    		});
+										// 		</script>
+										//     </tr>
+					  			// 		';
+					  			// 	}
 				  					
 				  					//CRON have not executed the sending script
 				  					else
