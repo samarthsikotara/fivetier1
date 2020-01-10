@@ -34,10 +34,11 @@
     	<div>
 	    	<p class="lead"><?php echo get_app_data('app_name');?></p>
     	</div>
-    	<h2><?php echo _('Subscriber lists');?></h2><br/>
+    	<!-- <h2><?php echo _('Subscriber lists');?></h2><br/> -->
+    	<h2><?php echo _('Targets');?></h2><br/>
     	
     	<div style="clear:both;">
-	    	<button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/new-list?i=<?php echo get_app_info('app');?>'"><i class="icon-plus-sign"></i> <?php echo _('Add a new list');?></button>
+	    	<!-- <button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/new-list?i=<?php echo get_app_info('app');?>'"><i class="icon-plus-sign"></i> <?php echo _('Add a new list');?></button> -->
 	    	
 	    	<form class="form-search" action="<?php echo get_app_info('path');?>/search-all-lists" method="GET" style="float:right;">
 	    		<input type="hidden" name="i" value="<?php echo get_app_info('app');?>">

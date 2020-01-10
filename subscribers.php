@@ -67,11 +67,12 @@
     	<div>
 	    	<p class="lead"><?php echo get_app_data('app_name');?></p>
     	</div>
-    	<h2><?php echo _('Subscriber lists');?></h2> <br/>
+    	<!-- <h2><?php echo _('Subscriber lists');?></h2><br/> -->
+    	<h2><?php echo _('Targets');?></h2><br/>
 
-    	<button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/update-list?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>'"><i class="icon-plus-sign"></i> <?php echo _('Add subscribers');?></button> 
+    	<!-- <button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/update-list?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>'"><i class="icon-plus-sign"></i> <?php echo _('Add subscribers');?></button> 
     	<button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/delete-from-list?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>'"><i class="icon-minus-sign"></i> <?php echo _('Delete subscribers');?></button> 
-    	<button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/unsubscribe-from-list?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>'"><i class="icon-ban-circle"></i> <?php echo _('Mass unsubscribe');?></button> 
+    	<button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/unsubscribe-from-list?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>'"><i class="icon-ban-circle"></i> <?php echo _('Mass unsubscribe');?></button>  -->
     	<?php 
     		//export according to which section user is on
     		if($a=='' && $c=='' && $u=='' && $b=='' && $cp=='')
@@ -111,9 +112,9 @@
 	    		$export_title = _('subscribers who marked your email as spam');
     		}     	
     	?>
-    	<button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/includes/subscribers/export-csv.php?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>&<?php echo $filter.'='.$filter_val;?>'"><i class="icon-download-alt"></i> <?php echo _('Export').' '.$export_title;?></button>
+    	<!-- <button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/includes/subscribers/export-csv.php?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>&<?php echo $filter.'='.$filter_val;?>'"><i class="icon-download-alt"></i> <?php echo _('Export').' '.$export_title;?></button> -->
 		
-		<form class="form-search" action="<?php echo get_app_info('path');?>/subscribers" method="GET" style="float:right;">
+		<!-- <form class="form-search" action="<?php echo get_app_info('path');?>/subscribers" method="GET" style="float:right;">
     		<input type="hidden" name="i" value="<?php echo get_app_info('app');?>">
     		<input type="hidden" name="l" value="<?php echo $lid;?>">
     		<?php if($a!=''):?>
@@ -129,12 +130,12 @@
     		<?php endif;?>
 			<input type="text" class="input-medium search-query" name="s">
 			<button type="submit" class="btn"><i class="icon-search"></i> <?php echo _('Search');?></button>
-		</form>
+		</form> -->
     	
     	<br/><br/>
     	<p class="well"><?php echo _('List');?>: <a href="<?php echo get_app_info('path');?>/subscribers?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>" title=""><span class="label label-info"><?php echo get_lists_data('name', $lid);?></span></a> | <a href="<?php echo get_app_info('path')?>/list?i=<?php echo get_app_info('app');?>" title=""><?php echo _('Back to lists');?></a>
-    	<a href="<?php echo get_app_info('path');?>/edit-list?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>" style="float:right;"><i class="icon-wrench"></i> <?php echo _('List settings');?></a>
-    	<a href="#subscribeform" style="float:right;margin-right:20px;" data-toggle="modal"><i class="icon-list-alt"></i> <?php echo _('Subscribe form');?></a>
+    	<!-- <a href="<?php echo get_app_info('path');?>/edit-list?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>" style="float:right;"><i class="icon-wrench"></i> <?php echo _('List settings');?></a>
+    	<a href="#subscribeform" style="float:right;margin-right:20px;" data-toggle="modal"><i class="icon-list-alt"></i> <?php echo _('Subscribe form');?></a> -->
     	
     	<?php 
 	    	$q = 'SELECT cron_ares FROM login WHERE id = '.get_app_info('main_userID');
@@ -146,14 +147,14 @@
 	    	}	    	
 	    	if($cron_ares):
     	?>
-    	<span class="badge" style="float:right;margin:0 20px 0 -15px;"><?php echo get_autoresponder_count();?></span>
+    	<!-- <span class="badge" style="float:right;margin:0 20px 0 -15px;"><?php echo get_autoresponder_count();?></span>
     	<a href="<?php echo get_app_info('path');?>/autoresponders-list?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>" style="float:right;margin-right:20px;"><i class="icon-time"></i> <?php echo _('Autoresponders');?></a>
     	<?php else:?>
     	<a href="#ares_cron" style="float:right;margin-right:20px;" data-toggle="modal"><i class="icon-time"></i> <?php echo _('Autoresponders');?></a>
     	<?php endif;?>
     	<span class="badge" style="float:right;margin:0 20px 0 -15px;"><?php echo get_custom_fields_count();?></span>
     	<a href="<?php echo get_app_info('path');?>/custom-fields?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>" style="float:right;margin-right:20px;"><i class="icon-list"></i> <?php echo _('Custom fields');?></a>
-    	</p><br/>
+    	</p><br/> -->
     	
     	<div id="subscribeform" class="modal hide fade">
             <div class="modal-header">
