@@ -31,7 +31,7 @@
 	<body>
 		<div class="navbar navbar-fixed-top">
 		  <!-- <div class="separator"></div> -->
-	      <div class="navbar-inner">
+	      <div class="navbar-inner" style="background-color: #fff;">
 	        <div class="container-fluid">
 	          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 	            <span class="icon-bar"></span>
@@ -42,7 +42,7 @@
 	          <!-- Check if sub user -->
 	          <?php if(!get_app_info('is_sub_user')):?>
 	          <!-- <a class="brand" href="<?php echo get_app_info('path');?>/"><img src="https://www.gravatar.com/avatar/<?php echo md5(strtolower(trim(get_app_info('email'))));?>?s=36&d=<?php echo get_app_info('path');?>/img/sendy-avatar.png" title="" class="main-gravatar" onerror="this.src='<?php echo get_app_info('path');?>/img/sendy-avatar.png'"/><?php echo get_app_info('company');?></a> -->
-	          <a class="brand" href="<?php echo get_app_info('path');?>/"><img src="http://18.207.46.209/images/Coldsend-Logo-Black-01.png" title="" style="height: 18px;" /></a>
+	          <a class="brand" href="<?php echo get_app_info('path');?>/"><img src="http://18.207.46.209/images/Coldsend-Logo-Black-01.png" title="" style="height: 18px;" /><?php echo get_app_info('company');?></a>
 	          <?php else:?>
 	          <?php 
 		          $q = 'SELECT brand_logo_filename FROM apps WHERE id = '.get_app_info('app');
