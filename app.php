@@ -261,7 +261,7 @@
 										    </form>
 										    ';
 										}
-										else
+										else if(get_app_info('userID') == 1)
 										    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 								      
 								        echo '</td>
@@ -380,7 +380,7 @@
 									    </form>
 									    ';
 									}
-									else
+									else if(get_app_info('userID') == 1)
 									    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 									      
 										 echo '</td>
@@ -482,7 +482,7 @@
 								    </form>
 								    ';
 								}
-								else
+								else if(get_app_info('userID') == 1)
 								    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 								 
 								 echo ' </td>
@@ -543,7 +543,7 @@
 							    </form>
 							    ';
 							}
-							else
+							else if(get_app_info('userID') == 1)
 							    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 						      
 						      echo '</td>
