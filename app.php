@@ -84,7 +84,13 @@
 		      	 }
 		      	?>
 		      </th>
-		      <th><?php echo _('Delete');?></th>
+		      <th>
+		      	<?php 
+		      	 if(get_app_info('userID') == 1){
+		      	 	echo _('Delete');
+		      	 }
+		      	?>
+		      </th>
 		    </tr>
 		  </thead>
 		  <tbody>

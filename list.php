@@ -57,8 +57,8 @@
 		      <th><?php echo _('Active');?></th>
 		      <th><?php echo _('Unsubscribed');?></th>
 		      <th><?php echo _('Bounced');?></th>
-		      <th><?php echo _('Edit');?></th>
-		      <th><?php echo _('Delete');?></th>
+		      <!-- <th><?php echo _('Edit');?></th>
+		      <th><?php echo _('Delete');?></th> -->
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -95,8 +95,7 @@
 					      <td id="progress'.$id.'">'.$subscribers_count.'</td>
 					      <td><span class="label">'.get_unsubscribers_percentage($subscribers_count, $unsubscribers_count).'%</span> '.$unsubscribers_count.' '._('users').'</td>
 					      <td><span class="label">'.get_bounced_percentage($bounces_count, $subscribers_count).'%</span> '.$bounces_count.' '._('users').'</td>
-					      <td><a href="edit-list?i='.get_app_info('app').'&l='.$id.'" title=""><i class="icon icon-pencil"></i></a></td>
-					      <td><a href="javascript:void(0)" title="'._('Delete').' '.$name.'?" id="delete-btn-'.$id.'" class="delete-list"><i class="icon icon-trash"></i></a></td>
+					      
 					      <script type="text/javascript">
 					    	$("#delete-btn-'.$id.'").click(function(e){
 							e.preventDefault(); 
