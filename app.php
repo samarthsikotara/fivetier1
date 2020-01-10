@@ -89,8 +89,7 @@
 				$total_pages = ceil($total_subs/$limit);
 				$p = isset($_GET['p']) ? $_GET['p'] : null;
 				$offset = $p!=null ? ($p-1) * $limit : 0;
-					echo get_app_info('userID');
-			  	$q = 'SELECT * FROM campaigns WHERE userID = '.get_app_info('main_userID').' AND app='.get_app_info('app').' ORDER BY id DESC LIMIT '.$offset.','.$limit;
+					$q = 'SELECT * FROM campaigns WHERE userID = '.get_app_info('main_userID').' AND app='.get_app_info('app').' ORDER BY id DESC LIMIT '.$offset.','.$limit;
 			  	$r = mysqli_query($mysqli, $q);
 			  	if ($r && mysqli_num_rows($r) > 0)
 			  	{
@@ -247,7 +246,7 @@
 										      <td><span class="label">'.$percentage_clicked.'%</span> '.number_format(get_click_percentage($id)).' '._('clicked').'</td>
 										      <td>';
 									    
-									    if(get_app_info('is_sub_user') && (get_app_info('userID') == 1))
+									    if(get_app_info('is_sub_user'))
 										{
 										    echo '
 										    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
@@ -262,7 +261,7 @@
 										    </form>
 										    ';
 										}
-										else
+										else if (get_app_info('userID') == 1){
 										    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 								      
 								        echo '</td>
@@ -366,7 +365,7 @@
 									      <td>
 									';
 									 
-									if(get_app_info('is_sub_user') && (get_app_info('userID') == 1))
+									if(get_app_info('is_sub_user'))
 									{
 									    echo '
 									    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
@@ -381,7 +380,7 @@
 									    </form>
 									    ';
 									}
-									else
+									else if (get_app_info('userID') == 1){
 									    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 									      
 										 echo '</td>
@@ -468,7 +467,7 @@
 								      <td>-</td>
 								      <td>';
 								      
-								if(get_app_info('is_sub_user') && (get_app_info('userID') == 1))
+								if(get_app_info('is_sub_user'))
 								{
 								    echo '
 								    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
@@ -483,7 +482,7 @@
 								    </form>
 								    ';
 								}
-								else
+								else if (get_app_info('userID') == 1){
 								    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 								 
 								 echo ' </td>
@@ -529,7 +528,7 @@
 							      <td><span class="label">'.$percentage_clicked.'%</span> '.number_format(get_click_percentage($id)).' '._('clicked').'</td>
 							      <td>';
 							      
-							if(get_app_info('is_sub_user') && (get_app_info('userID') == 1))
+							if(get_app_info('is_sub_user'))
 							{
 							    echo '
 							    <form action="'.get_app_info('path').'/includes/app/duplicate.php" method="POST" accept-charset="utf-8" class="form-vertical" name="duplicate-form" id="duplicate-form-direct-'.$id.'" style="margin-bottom:0px;">
@@ -544,7 +543,7 @@
 							    </form>
 							    ';
 							}
-							else
+							else if (get_app_info('userID') == 1){
 							    echo '<a href="#duplicate-modal" title="" id="duplicate-btn-'.$id.'" data-toggle="modal" data-cid="'.$id.'" class="duplicate-btn"><i class="icon icon-copy"></i></a>';
 						      
 						      echo '</td>
