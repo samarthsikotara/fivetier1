@@ -77,7 +77,15 @@
 		      <th><?php echo _('Sent');?></th>
 		      <th><?php echo _('Unique Opens');?></th>
 		      <th><?php echo _('Unique Clicks');?></th>
-		      <th><?php ((get_app_info('userID') == 1)) ? echo _('Duplicate') : '');?></th>
+		      <th>
+		      	<?php 
+		      	 if(get_app_info('userID') == 1){
+		      	 	echo _('Duplicate')
+		      	 }else{
+		      	 	''
+		      	 };
+		      	?>
+		      </th>
 		      <th><?php echo _('Delete');?></th>
 		    </tr>
 		  </thead>
