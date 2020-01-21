@@ -112,9 +112,9 @@
 	    		$export_title = _('subscribers who marked your email as spam');
     		}     	
     	?>
-    	<!-- <button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/includes/subscribers/export-csv.php?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>&<?php echo $filter.'='.$filter_val;?>'"><i class="icon-download-alt"></i> <?php echo _('Export').' '.$export_title;?></button> -->
+    	<button class="btn" onclick="window.location='<?php echo get_app_info('path');?>/includes/subscribers/export-csv.php?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>&<?php echo $filter.'='.$filter_val;?>'"><i class="icon-download-alt"></i> <?php echo _('Export').' '.$export_title;?></button>
 		
-		<!-- <form class="form-search" action="<?php echo get_app_info('path');?>/subscribers" method="GET" style="float:right;">
+		<form class="form-search" action="<?php echo get_app_info('path');?>/subscribers" method="GET" style="float:right;">
     		<input type="hidden" name="i" value="<?php echo get_app_info('app');?>">
     		<input type="hidden" name="l" value="<?php echo $lid;?>">
     		<?php if($a!=''):?>
@@ -130,7 +130,7 @@
     		<?php endif;?>
 			<input type="text" class="input-medium search-query" name="s">
 			<button type="submit" class="btn"><i class="icon-search"></i> <?php echo _('Search');?></button>
-		</form> -->
+		</form>
     	
     	<br/><br/>
     	<p class="well"><?php echo _('List');?>: <a href="<?php echo get_app_info('path');?>/subscribers?i=<?php echo get_app_info('app');?>&l=<?php echo $lid;?>" title=""><span class="label label-info"><?php echo get_lists_data('name', $lid);?></span></a> | <a href="<?php echo get_app_info('path')?>/list?i=<?php echo get_app_info('app');?>" title=""><?php echo _('Back to lists');?></a>
