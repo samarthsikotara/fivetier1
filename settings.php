@@ -13,6 +13,8 @@
 		<?php else:?>
 		
 		<h3><?php echo _('Amazon SES Quota');?></h3><br/>
+		<?php get_app_info('s3_key'); ?>
+		<?php get_app_info('s3_secret'); ?>
 		<div class="well">
 			<?php
 				if(get_app_info('s3_key')=='' && get_app_info('s3_secret')==''){}
@@ -25,7 +27,7 @@
 					$testAWSCreds = $ses->getSendQuota();
 					
 					$quoteArray = array();
-					
+					echo $testAWSCreds;
 					foreach($ses->getSendQuota() as $quota){
 						array_push($quoteArray, $quota);
 					}
