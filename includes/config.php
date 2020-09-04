@@ -11,7 +11,7 @@
 	//$url = 'localhost';
 	$dbHost = 'localhost'; //MySQL Hostname
         $dbUser = 'root'; //MySQL Username
-        $dbPass = 'root'; //MySQL Password
+        $dbPass = 'CoronavirusCoder$001'; //MySQL Password
         $dbName = 'fivetier'; //MySQL Database Name
 	
 	//----------------------------------------------------------------------------------//	

@@ -10,6 +10,7 @@ $app = mysqli_real_escape_string($mysqli, $_POST['app']);
 
 //add new list
 $q = 'INSERT INTO lists (app, userID, name) VALUES ('.$app.', '.$userID.', "'.$new_list_name.'")';
+echo '======'.$q;
 $r = mysqli_query($mysqli, $q);
 if ($r)
 {

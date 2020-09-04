@@ -23,6 +23,9 @@ RewriteRule ^unsubscribe/(.*)$ unsubscribe.php?i=$1 [L]
 # subscribe
 RewriteRule ^subscribe/(.*)$ subscribe.php?i=$1 [L]
 
+# api
+#RewriteRule ^api/campaigns/(.*)$ create.php?i=$1 [L]
+
 <IfModule mod_security.c>
   SecRuleEngine Off
   SecFilterInheritance Off

@@ -102,10 +102,10 @@
 			//Check if all lists passed into the API exists, else throw error
 			$list_id = explode(',', $list_ids);
 			$brand_id_array = array();
-			
 			foreach($list_id as $listid)
 			{
-				$listid = trim(short($listid,true));
+				//$listid = trim(short($listid,true));
+				//echo $listid;
 				$q = 'SELECT app FROM lists WHERE id = '.$listid;
 				$r = mysqli_query($mysqli, $q);
 				if (mysqli_num_rows($r) == 0) 
@@ -145,7 +145,8 @@
 		//Get list IDs
 		foreach($list_id as $listid)
 		{
-			$listids .= trim(short($listid,true)).',';
+			//$listids .= trim(short($listid,true)).',';
+			$listids .= trim($listid).',';
 		}
 		$listids = substr($listids, 0, -1);
 		
@@ -155,8 +156,11 @@
 		$to_send = mysqli_num_rows(mysqli_query($mysqli, $q));
 		
 		//Create and send campaign
-		$q2 = 'INSERT INTO campaigns (userID, app, from_name, from_email, reply_to, title, plain_text, html_text, wysiwyg, sent, to_send, send_date, lists, timezone, query_string) VALUES ('.$userID.', '.$app.', "'.$from_name.'", "'.$from_email.'", "'.$reply_to.'", "'.$subject.'", "'.$plain_text.'", "'.$html_text.'", 1, "'.$sent.'", '.$to_send.', 0, "'.$listids.'", 0, "'.$query_string.'")';
-		$r2 = mysqli_query($mysqli, $q2);
+		$q2 = 'INSERT INTO campaigns (userID, app, from_name, from_email, reply_to, title, plain_text, html_text, wysiwyg, sent, to_send, send_date, lists, timezone, query_string, campaignID) VALUES ('.$userID.', '.$app.', "'.$from_name.'", "'.$from_email.'", "'.$reply_to.'", "'.$subject.'", "'.$plain_text.'", "'.$html_text.'", 1, "'.$sent.'", '.$to_send.', 0, "'.$listids.'", 0, "'.$query_string.'", 0)';
+		//echo $q2;
+                $r2 = mysqli_query($mysqli, $q2);
+		//echo "=====";
+		//echo $r2;
 		if ($r2) 
 		{
 			echo 'Campaign created and now sending';
